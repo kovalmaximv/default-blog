@@ -9,10 +9,15 @@
     <changeSet author="mkoval" id="init-20210823">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="posts"/>
+                <and>
+                    <tableExists tableName="posts"/>
+                    <tableExists tableName="user_roles"/>
+                    <tableExists tableName="users"/>
+                </and>
             </not>
         </preConditions>
         <sqlFile path="classpath:/db/changelog/sql/tables.sql" relativeToChangelogFile="false"/>
+        <sqlFile path="classpath:/db/changelog/sql/data.sql" relativeToChangelogFile="false"/>
     </changeSet>
 
 </databaseChangeLog>

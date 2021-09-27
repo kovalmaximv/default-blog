@@ -29,5 +29,4 @@ public class PostController {
     public void create(@RequestBody PostCreateRequest postCreateRequest) {
         postService.createPost(postCreateRequest);
     }
-
 }
